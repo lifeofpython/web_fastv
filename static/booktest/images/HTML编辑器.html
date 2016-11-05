@@ -1,0 +1,27 @@
+
+<!-- saved from url=(0071)http://127.0.0.1:8000/static/tiny_mce/themes/advanced/source_editor.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+	<title>HTML编辑器</title>
+	<script type="text/javascript" src="./HTML编辑器_files/tiny_mce_popup.js"></script><link rel="stylesheet" href="./HTML编辑器_files/dialog.css">
+	<script type="text/javascript" src="./HTML编辑器_files/source_editor.js"></script>
+</head>
+<body onresize="resizeInputs();" style="overflow: hidden;" spellcheck="false" class="forceColors">
+	<form name="source" onsubmit="saveContent();return false;" action="http://127.0.0.1:8000/static/tiny_mce/themes/advanced/source_editor.htm#">
+		<div style="float: left" class="title"><label for="htmlSource">HTML编辑器</label></div>
+
+		<div id="wrapline" style="float: right">
+			<input type="checkbox" name="wraped" id="wraped" onclick="toggleWordWrap(this);" class="wordWrapCode"><label for="wraped">自动换行</label>
+		</div>
+
+		<br style="clear: both">
+
+		<textarea name="htmlSource" id="htmlSource" rows="15" cols="100" style="width: 700px; height: 469px; font-family: &#39;Courier New&#39;, Courier, monospace; font-size: 12px; white-space: pre-wrap;" dir="ltr" wrap="off" class="mceFocus"></textarea>
+
+		<div class="mceActionPanel">
+			<input type="submit" role="button" name="insert" value="更新" id="insert">
+			<input type="button" role="button" name="cancel" value="取消" onclick="tinyMCEPopup.close();" id="cancel">
+		</div>
+	</form>
+
+
+</body></html>

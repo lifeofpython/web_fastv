@@ -1,0 +1,244 @@
+{%load static from staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>{%block title%}天天生鲜-首页{%endblock title%}</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'text/css/reset.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'text/css/main.css'%}">
+    <script type="text/javascript" src="{%static 'text/js/jquery-1.12.4.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'text/js/jquery-ui.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'text/js/slide.js'%}"></script>
+    <!-- <script type="text/javascript" src="{%static 'text/js/main.js'%}"></script> -->
+
+</head>
+<body>
+    <div class="header_con">
+        <div class="header">
+            <div class="welcome fl">欢迎来到天天生鲜!</div>
+            <div class="fr">
+                {%if data == None%}
+                <div class="login_btn fl">
+                    <a href="{%url 'main:base'%}">登录</a>
+                    <span>|</span>
+                    <a href="{%url 'main:base'%}">注册</a>
+                </div>
+                {%else%}
+                <div class="login_info fl">
+                    欢迎您：<em>&nbsp;{{data}}</em>
+                    <span> &nbsp;&nbsp; </span>
+                    <a href="{%url 'main:logout'%}">退出</a>
+                </div>
+                {%endif%}
+                <div class="user_link fl">
+                    <span>|</span>
+                    <a href="{%url 'main:index'%}">用户中心</a>
+                    <span>|</span>
+                    <a href="{%url 'main:index'%}">我的购物车</a>
+                    <span>|</span>
+                    <a href="{%url 'main:index'%}">我的订单</a>
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    <div class="search_bar clearfix">
+        <a href="{%url 'main:index'%}" class="logo fl"><img src="{%static 'text/images/logo.png'%}"></a>{%block blank%}{%endblock blank%}
+        <div class="search_con fl">
+            <input type="text" class="input_text fl" name="" placeholder="搜索商品">
+            <input type="button" class="input_btn fr" name="" value="搜索">
+        </div>
+        {%block cart%}
+        <div class="guest_cart fr">
+            <a href="{%url 'main:index'%}" class="cart_name fl">我的购物车</a>
+            <div class="goods_count fl" id="show_count">1</div>
+        </div>
+        {%endblock cart%}
+    </div>
+
+    
+    {%block content%}
+    <div class="main_con clearfix">
+    {% block left%}左侧页面{% endblock %}
+    {% block right%}{% endblock %}
+    </div>
+    {%endblock content%}
+    <div class="footer">
+        <div class="foot_link">
+            <a href="#">关于我们</a>
+            <span>|</span>
+            <a href="#">联系我们</a>
+            <span>|</span>
+            <a href="#">招聘人才</a>
+            <span>|</span>
+            <a href="#">友情链接</a>        
+        </div>
+        <p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
+        <p>电话：010-****888    京ICP备*******8号</p>
+    </div>
+
+    
+</body>
+</html>{%load static from staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>{%block title%}天天生鲜-首页{%endblock title%}</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'text/css/reset.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'text/css/main.css'%}">
+    <script type="text/javascript" src="{%static 'text/js/jquery-1.12.4.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'text/js/jquery-ui.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'text/js/slide.js'%}"></script>
+    <!-- <script type="text/javascript" src="{%static 'text/js/main.js'%}"></script> -->
+
+</head>
+<body>
+    <div class="header_con">
+        <div class="header">
+            <div class="welcome fl">欢迎来到天天生鲜!</div>
+            <div class="fr">
+                {%if data == None%}
+                <div class="login_btn fl">
+                    <a href="{%url 'main:base'%}">登录</a>
+                    <span>|</span>
+                    <a href="{%url 'main:base'%}">注册</a>
+                </div>
+                {%else%}
+                <div class="login_info fl">
+                    欢迎您：<em>&nbsp;{{data}}</em>
+                    <span> &nbsp;&nbsp; </span>
+                    <a href="{%url 'main:logout'%}">退出</a>
+                </div>
+                {%endif%}
+                <div class="user_link fl">
+                    <span>|</span>
+                    <a href="{%url 'main:index'%}">用户中心</a>
+                    <span>|</span>
+                    <a href="{%url 'main:index'%}">我的购物车</a>
+                    <span>|</span>
+                    <a href="{%url 'main:index'%}">我的订单</a>
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    <div class="search_bar clearfix">
+        <a href="{%url 'main:index'%}" class="logo fl"><img src="{%static 'text/images/logo.png'%}"></a>{%block blank%}{%endblock blank%}
+        <div class="search_con fl">
+            <input type="text" class="input_text fl" name="" placeholder="搜索商品">
+            <input type="button" class="input_btn fr" name="" value="搜索">
+        </div>
+        {%block cart%}
+        <div class="guest_cart fr">
+            <a href="{%url 'main:index'%}" class="cart_name fl">我的购物车</a>
+            <div class="goods_count fl" id="show_count">1</div>
+        </div>
+        {%endblock cart%}
+    </div>
+
+    
+    {%block content%}
+    <div class="main_con clearfix">
+    {% block left%}左侧页面{% endblock %}
+    {% block right%}{% endblock %}
+    </div>
+    {%endblock content%}
+    <div class="footer">
+        <div class="foot_link">
+            <a href="#">关于我们</a>
+            <span>|</span>
+            <a href="#">联系我们</a>
+            <span>|</span>
+            <a href="#">招聘人才</a>
+            <span>|</span>
+            <a href="#">友情链接</a>        
+        </div>
+        <p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
+        <p>电话：010-****888    京ICP备*******8号</p>
+    </div>
+
+    
+</body>
+</html>{%load static from staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>{%block title%}天天生鲜-首页{%endblock title%}</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'text/css/reset.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'text/css/main.css'%}">
+    <script type="text/javascript" src="{%static 'text/js/jquery-1.12.4.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'text/js/jquery-ui.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'text/js/slide.js'%}"></script>
+    <!-- <script type="text/javascript" src="{%static 'text/js/main.js'%}"></script> -->
+
+</head>
+<body>
+    <div class="header_con">
+        <div class="header">
+            <div class="welcome fl">欢迎来到天天生鲜!</div>
+            <div class="fr">
+                {%if data == None%}
+                <div class="login_btn fl">
+                    <a href="{%url 'main:base'%}">登录</a>
+                    <span>|</span>
+                    <a href="{%url 'main:base'%}">注册</a>
+                </div>
+                {%else%}
+                <div class="login_info fl">
+                    欢迎您：<em>&nbsp;{{data}}</em>
+                    <span> &nbsp;&nbsp; </span>
+                    <a href="{%url 'main:logout'%}">退出</a>
+                </div>
+                {%endif%}
+                <div class="user_link fl">
+                    <span>|</span>
+                    <a href="{%url 'main:index'%}">用户中心</a>
+                    <span>|</span>
+                    <a href="{%url 'main:index'%}">我的购物车</a>
+                    <span>|</span>
+                    <a href="{%url 'main:index'%}">我的订单</a>
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    <div class="search_bar clearfix">
+        <a href="{%url 'main:index'%}" class="logo fl"><img src="{%static 'text/images/logo.png'%}"></a>{%block blank%}{%endblock blank%}
+        <div class="search_con fl">
+            <input type="text" class="input_text fl" name="" placeholder="搜索商品">
+            <input type="button" class="input_btn fr" name="" value="搜索">
+        </div>
+        {%block cart%}
+        <div class="guest_cart fr">
+            <a href="{%url 'main:index'%}" class="cart_name fl">我的购物车</a>
+            <div class="goods_count fl" id="show_count">1</div>
+        </div>
+        {%endblock cart%}
+    </div>
+
+    
+    {%block content%}
+    <div class="main_con clearfix">
+    {% block left%}左侧页面{% endblock %}
+    {% block right%}{% endblock %}
+    </div>
+    {%endblock content%}
+    <div class="footer">
+        <div class="foot_link">
+            <a href="#">关于我们</a>
+            <span>|</span>
+            <a href="#">联系我们</a>
+            <span>|</span>
+            <a href="#">招聘人才</a>
+            <span>|</span>
+            <a href="#">友情链接</a>        
+        </div>
+        <p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
+        <p>电话：010-****888    京ICP备*******8号</p>
+    </div>
+
+    
+</body>
+</html>
